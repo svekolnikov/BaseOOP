@@ -64,6 +64,12 @@ namespace BasicsOOP.Bank
             Console.WriteLine($"Снято: {amount}. Остаток: {Balance}");
         }
 
+        public void TransferTo(BankAccount account, decimal amount)
+        {
+            account.Deposit(amount);
+            Console.WriteLine($"Переведено: {amount}. Остаток: {Balance}");
+        }
+
         public override string ToString()
         {
             return $"Тип банковского счета: {BankAccountType}, номер счета: {Number}, баланс: {Balance}";
