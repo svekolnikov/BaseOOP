@@ -1,7 +1,7 @@
 ﻿using System;
-using System.Threading.Channels;
 using BasicsOOP.Bank;
 using BasicsOOP.Basics;
+using Buildings;
 
 namespace BasicsOOP
 {
@@ -33,9 +33,13 @@ namespace BasicsOOP
             //Test Transfer
             bankAccount3.TransferTo(bankAccount4, 10000);
 
+            Console.WriteLine();
+
             //Revers string
             var stringOperations = new StringsOperations();
             Console.WriteLine(stringOperations.Reverse("new words"));
+
+            Console.WriteLine();
 
             //Emails
             var contactsPath = "D:\\contacts.txt";
@@ -43,6 +47,24 @@ namespace BasicsOOP
             var emails = stringOperations.GetEmailsFromContacts(contactsPath);
             emails.ForEach(Console.WriteLine);
             stringOperations.SaveEmails(emails, emailsPath);
+
+            Console.WriteLine();
+
+            //Buildings
+            var building1 = Creator.CreateBuilding(30, 10,30,1);
+            var building2 = Creator.CreateBuilding(20,5,10,2);
+            var building3 = Creator.CreateBuilding(height: 5.0f);
+            var building4 = Creator.CreateBuilding(flats: 30);
+
+            //Remove by id
+            Creator.RemoveBuildingById(building2.Id);
+
+            var buildings = Creator.GetBuildingsList();
+            foreach (var building in buildings)
+            {
+                Console.WriteLine(building.ToString());
+                Console.WriteLine();
+            }
         }
     }
 }
