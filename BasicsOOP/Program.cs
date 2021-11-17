@@ -1,7 +1,11 @@
 ﻿using System;
+using System.Drawing;
 using BasicsOOP.Bank;
 using BasicsOOP.Basics;
+using BasicsOOP.Geometry;
 using Buildings;
+using Point = BasicsOOP.Geometry.Point;
+using Rectangle = BasicsOOP.Geometry.Rectangle;
 
 namespace BasicsOOP
 {
@@ -105,7 +109,30 @@ namespace BasicsOOP
             bankAccount3.Deposit(10000);
             Console.WriteLine($"Балансы банковских счетов равны?: {bankAccount2 == bankAccount3}");
 
+            Console.WriteLine();
 
+            //Геометрические фигуры
+            var point = new Point(1,1,false,Color.Red);
+            var circle = new Circle(5, 5, true, Color.Blue, 5);
+            var rect = new Rectangle(1, 2, true, Color.Aqua, 3, 4);
+
+            point.Print();
+            Console.WriteLine();
+
+            circle.Print();
+            Console.WriteLine();
+
+            rect.Print();
+            Console.WriteLine();
+
+            point.MoveX(3);
+            point.MoveY(1);
+
+            circle.MoveX(4);
+            circle.MoveY(2);
+
+            rect.MoveX(1);
+            rect.MoveY(3);
         }
 
     }
