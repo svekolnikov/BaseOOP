@@ -84,6 +84,17 @@ namespace BasicsOOP
             Console.WriteLine($"Деление: {r1 / r2}");
             Console.WriteLine($"Остаток от деления: {r1 % r2}");
 
+            Console.WriteLine();
+
+            //Complex numbers
+            var c1 = new ComplexNumber(4, 6);
+            var c2 = new ComplexNumber(3, 7);
+
+            Console.WriteLine($"Равно?: {c1 == c2}");
+            Console.WriteLine($"Не равно?: {c1 != c2}");
+            Console.WriteLine($"Сумма: {c1 + c2}");
+            Console.WriteLine($"Разность: {c1 - c2}");
+            Console.WriteLine($"Умножение: {c1 * c2}");
         }
 
     }
