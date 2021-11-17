@@ -95,6 +95,17 @@ namespace BasicsOOP
             Console.WriteLine($"Сумма: {c1 + c2}");
             Console.WriteLine($"Разность: {c1 - c2}");
             Console.WriteLine($"Умножение: {c1 * c2}");
+
+            Console.WriteLine();
+
+            //Банковский счет
+            Console.WriteLine($"Банковские счета для сравнения:\n{bankAccount2}\n{bankAccount3}");
+            Console.WriteLine($"Балансы банковских счетов равны?: {bankAccount2 == bankAccount3}");
+            Console.WriteLine($"Балансы банковских счетов не равны?: {bankAccount2 != bankAccount3}");
+            bankAccount3.Deposit(10000);
+            Console.WriteLine($"Балансы банковских счетов равны?: {bankAccount2 == bankAccount3}");
+
+
         }
 
     }

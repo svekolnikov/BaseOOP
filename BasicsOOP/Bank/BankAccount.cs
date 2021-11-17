@@ -3,7 +3,7 @@ using System.Threading.Channels;
 
 namespace BasicsOOP.Bank
 {
-    public class BankAccount
+    public class BankAccount : IEquatable<BankAccount>
     {
         private static long _number;
 
@@ -34,9 +34,9 @@ namespace BasicsOOP.Bank
             BankAccountType = bankAccountType;
         }
 
-        public BankAccountType BankAccountType { get; set; }
-        public long Number { get; set; }
-        public decimal Balance { get; set; }
+        public BankAccountType BankAccountType { get; }
+        public long Number { get; }
+        public decimal Balance { get; private set; }
 
         public void Deposit(decimal amount)
         {
@@ -68,6 +68,40 @@ namespace BasicsOOP.Bank
         {
             account.Deposit(amount);
             Console.WriteLine($"Переведено: {amount}. Остаток: {Balance}");
+        }
+
+
+
+        public static bool operator ==(BankAccount acc1, BankAccount acc2)
+        {
+            return acc1?.Balance == acc2?.Balance ;
+        }
+
+        public static bool operator !=(BankAccount acc1, BankAccount acc2)
+        {
+            return !(acc1 == acc2);
+        }
+
+        public override bool Equals(object? obj)
+        {
+            return Equals(obj as BankAccount);
+        }
+
+        public bool Equals(BankAccount other)
+        {
+            return other != null && Balance == other.Balance;
+        }
+
+        public override int GetHashCode()
+        {
+            unchecked
+            {
+                var hash = 17;
+                hash = hash * 23 + Number.GetHashCode();
+                hash = hash * 23 + Balance.GetHashCode();
+                hash = hash * 23 + BankAccountType.GetHashCode();
+                return hash;
+            }
         }
 
         public override string ToString()
