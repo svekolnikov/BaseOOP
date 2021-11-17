@@ -2,8 +2,8 @@
 {
     public interface IСoder
     {
-        public string Encode();
+        public string Encode(string str);
 
-        public string Decode();
+        public string Decode(string str);
     }
 }

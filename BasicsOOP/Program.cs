@@ -2,6 +2,7 @@
 using System.Drawing;
 using BasicsOOP.Bank;
 using BasicsOOP.Basics;
+using BasicsOOP.Encryption;
 using BasicsOOP.Geometry;
 using Buildings;
 using Point = BasicsOOP.Geometry.Point;
@@ -137,7 +138,17 @@ namespace BasicsOOP
             Console.WriteLine();
 
             //Шифрование
+            var aCoder = new ACoder();
+            var aResult = aCoder.Encode("яблоня");
+            Console.WriteLine(aResult);
+            Console.WriteLine(aCoder.Decode(aResult));
 
+            Console.WriteLine();
+
+            var bCoder = new BCoder();
+            var bResult = bCoder.Encode("яблоня");
+            Console.WriteLine(bResult);
+            Console.WriteLine(bCoder.Decode(bResult));
         }
 
     }
