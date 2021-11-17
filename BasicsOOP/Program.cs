@@ -65,6 +65,26 @@ namespace BasicsOOP
                 Console.WriteLine(building.ToString());
                 Console.WriteLine();
             }
+
+            //Rational numbers
+            var r1 = new RationalNumber(2, 3);
+            var r2 = new RationalNumber(3, 2);
+
+            Console.WriteLine($"Равно?: {r1 == r2}");
+            Console.WriteLine($"Не равно?: {r1 != r2}");
+            Console.WriteLine($"Сумма: {r1 + r2}");
+            Console.WriteLine($"Разность: {r1 - r2}");
+            Console.WriteLine($"Инкремент: {++r1}");
+            Console.WriteLine($"Декремент: {--r1}");
+            Console.WriteLine($"Меньше?: {r1 < r2}");
+            Console.WriteLine($"Больше?: {r1 > r2}");
+            Console.WriteLine($"Меньше или равно?: {r1 <= r2}");
+            Console.WriteLine($"Больше или равно?: {r1 >= r2}");
+            Console.WriteLine($"Умножение: {r1 * r2}");
+            Console.WriteLine($"Деление: {r1 / r2}");
+            Console.WriteLine($"Остаток от деления: {r1 % r2}");
+
         }
+
     }
 }
