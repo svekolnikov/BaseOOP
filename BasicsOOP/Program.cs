@@ -133,6 +133,11 @@ namespace BasicsOOP
 
             rect.MoveX(1);
             rect.MoveY(3);
+
+            Console.WriteLine();
+
+            //Шифрование
+
         }
 
     }

@@ -5,13 +5,13 @@ namespace BasicsOOP.Geometry
 {
     internal class Circle : Point
     {
-        public override string Name => "Circle";
         public float Radius { get; }
 
         public Circle(float x, float y, bool isVisible, Color color, float radius) 
             : base(x, y, isVisible, color)
         {
             Radius = radius;
+            Name = "Circle";
         }
 
         public double GetSquare() => Math.PI*Radius*Radius;

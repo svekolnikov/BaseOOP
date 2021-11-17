@@ -5,7 +5,7 @@ namespace BasicsOOP.Geometry
 {
     internal abstract class Figure
     {
-        public virtual string Name => "Figure";
+        public virtual string Name { get; protected set; } = "Figure";
         public bool IsVisible { get; }
 
         public Color Color { get; private set; }

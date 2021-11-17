@@ -5,7 +5,6 @@ namespace BasicsOOP.Geometry
 {
     internal class Rectangle : Point
     {
-        public override string Name => "Rectangle";
         public float A { get; }
         public float B { get; }
 
@@ -14,6 +13,7 @@ namespace BasicsOOP.Geometry
         {
             A = a;
             B = b;
+            Name = "Rectangle";
         }
 
         public double GetSquare() => A * B;
